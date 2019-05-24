@@ -1,0 +1,35 @@
+1. Merges the training and test data to create one data set
+
+  Read in the dataset and assign column names.
+  features: 'features.txt' -> list of all features
+  TestSubjects: 'subject_test.txt' -> test subject data
+  TrainSubjects: 'subject_train.txt' -> training subject data
+  
+  Compile Train dataset
+  GalaxyTrain: 'train/X_train.txt' -> training data set
+  GalaxyTrainLabels: 'train/y_train.txt' -> training data set labels
+  GalaxyTrain: Merged data sets GalaxyTest and GalaxyTestLabels
+  
+  Compile Test set
+  GalaxyTest: 'test/X_test.txt' -> test data set
+  GalaxyTestLabels: 'test/y_test.txt' -> test data set labels
+  GalaxyTest: Merged dataset of GalaxyTest and GalaxyTestLabels
+  
+  Combine Test and Train datasets
+  GalaxyData: rbind dataset GalaxyTrain and GalaxyTest
+ 
+2. Uses descriptive activity names to name the activities in the data set
+   Activities: 'activity_labels.txt' -> Activity_Name and Activity_ID cross reference
+   GalaxyData: Merge Activies and GalaxyData
+
+3. Extracts only the mean and standard deviation variables for each measurement.
+
+   GalaxyData: Subset dataset by selecting columns that contain 'mean' and 'std'
+
+4. Creates descriptive variable names
+
+   Renamed the column names in GalaxyData so they are more standardized and descriptive
+
+5. From the data set in step 4, a second, independent tidy data set is created with the average of each variable for each activity and each subject
+
+   GalaxySummary: Second data calculating the mean of each variable for each activity and each subject in GalaxyData
